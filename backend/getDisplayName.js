@@ -21,19 +21,19 @@ function getDisplayName(type: Function): string {
   let displayName = type.displayName || type.name || 'Unknown';
   // Facebook-specific hack to turn "Image [from Image.react]" into just "Image".
   // We need displayName with module name for error reports but it clutters the DevTools.
-  const match = displayName.match(FB_MODULE_RE);
-//   if (match) {
-//     const componentName = match[1];
-//     const moduleName = match[2];
-//     if (componentName && moduleName) {
-//       if (
-//         moduleName === componentName ||
-//         moduleName.startsWith(componentName + '.')
-//       ) {
-//         displayName = componentName;
-//       }
-//     }
-//   }
+  //  const match = displayName.match(FB_MODULE_RE);
+  //   if (match) {
+  //     const componentName = match[1];
+  //     const moduleName = match[2];
+  //     if (componentName && moduleName) {
+  //       if (
+  //         moduleName === componentName ||
+  //         moduleName.startsWith(componentName + '.')
+  //       ) {
+  //         displayName = componentName;
+  //       }
+  //     }
+  //   }
 
   cachedDisplayNames.set(type, displayName);
   return displayName;
